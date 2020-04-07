@@ -158,7 +158,7 @@ def version_compare(value, version, operator='eq', strict=False):
         method = getattr(py_operator, operator)
         return method(Version(str(value)), Version(str(version)))
     except Exception as e:
-        raise errors.AnsibleFilterError('Version comparison: %s' % e)
+        raise errors.AnsibleFilterError('Version comparison: %s %s' % (value, version))
 
 
 class TestModule(object):
